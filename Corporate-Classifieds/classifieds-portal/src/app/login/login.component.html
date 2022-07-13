@@ -1,0 +1,34 @@
+<div class="container-fluid">
+    <div *ngIf="formError!=''" class="alert alert-danger" style="text-align:center">{{formError}}</div>
+    <div class="login-content">
+        <h1>Login</h1>
+
+        <!--login form-->
+        <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+            <label for="username">Username</label>
+            <input class="form-control" id="username" type="text" placeholder="enter your username" formControlName="username" required>
+
+            <!-- error checking for username(required and minimum length should be 3)-->
+            <div *ngIf="username?.invalid && (username?.dirty || username?.touched)" class="alert alert-danger">
+                <div *ngIf="username?.errors?.required">
+                    Username is required.
+                </div>
+                <div *ngIf="username?.errors?.minlength">
+                    Username must be at least 3 characters long.
+                </div>
+            </div>
+
+            <label for="password">Password</label>
+            <input class='form-control' id="password" type="password" placeholder="enter your password" formControlName="password" required>
+            <!-- error checking for password-->
+            <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="alert alert-danger">
+                <div *ngIf="password?.errors?.required">
+                    Password is required.
+                </div>
+            </div>
+
+            <button type="submit" [disabled]="!userForm.valid" class="btn btn-outline-dark">Sign in</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="alert alert-danger" *ngIf="pageError!=''">{{pageError}}</div>
+    <div class="profile-details-content">
+        <h1 style="font-weight: 100;">Profile</h1><br>
+        <table class="table table-striped table-bordered table-light">
+            <thead>
+                <tr>
+                    <th>Properties</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Id</td>
+                    <td>{{employee.id}}</td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>{{employee.name}}</td>
+                </tr>
+                <tr>
+                    <td>Department</td>
+                    <td>{{employee.department==undefined?"not available":employee.department}}</td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td>{{employee.gender}}</td>
+                </tr>
+                <tr>
+                    <td>Age</td>
+                    <td>{{employee.age}}</td>
+                </tr>
+                <tr>
+                    <td>Contact Number</td>
+                    <td>{{employee.contactNumber==undefined?"not available":employee.contactNumber}}</td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>{{employee.email==undefined?'not available':employee.email}}</td>
+                </tr>
+                <tr>
+                    <td>Points Gained</td>
+                    <td>{{employee.pointsGained}} &nbsp;&nbsp;
+                        <!-- refresh button to update the points -->
+                        <button (click)="updatePoints()" class="material-icons btn btn-outline-primary">refresh</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <a routerLink="/main" class="btn btn-primary">Back</a>
+    </div>
+</div>

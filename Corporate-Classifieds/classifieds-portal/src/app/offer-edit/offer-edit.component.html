@@ -1,0 +1,87 @@
+<div class="container">
+    <div class="alert alert-danger" *ngIf="pageError!=''">{{pageError}}</div>
+    <div class="offer-details-content">
+        <h1>Offer details</h1>
+        <br>
+        <form [formGroup]="offerForm" (ngSubmit)="onSubmit()">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Properties</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Id</td>
+                        <td>{{offer.id}}</td>
+                    </tr>
+                    <tr>
+                        <td>Name</td>
+                        <td>
+                            <!-- to handle the bug-->
+                            <input type="text" formControlName="name" style="display:none">
+                            <input type="text" formControlName="name" style="display:none">
+
+
+                            <input type="text" formControlName="name" class="form-control">
+                            <!-- error checking for name-->
+                            <div *ngIf="name?.invalid && (name?.dirty || name?.touched)" class="alert alert-danger">
+                                <div *ngIf="name?.errors?.required">
+                                    name of the offer is required.
+                                </div>
+                                <div *ngIf="name?.errors?.minlength">
+                                    name must be at least 3 characters long.
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Description</td>
+                        <td>
+                            <input type="textbox" formControlName="description" class="form-control">
+                            <!-- error checking for description-->
+                            <div *ngIf="description?.invalid && (description?.dirty || description?.touched)" class="alert alert-danger">
+                                <div *ngIf="description?.errors?.required">
+                                    Description is required.
+                                </div>
+                                <div *ngIf="description?.errors?.minlength">
+                                    Description must be at least 10 characters long.
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Category</td>
+                        <td>
+                            <select class="form-control" formControlName="category">
+                                <option>Electronics</option>
+                                <option>Plants</option>
+				<option>Furniture</option>
+				<option>Accessories</option>
+                                </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Posted on</td>
+                        <td>{{offer.openDate | date:'longDate'}}</td>
+                    </tr>
+                    <tr>
+                        <td>Engaged on</td>
+                        <td>{{offer.engagedDate==null && offer.closedDate == null?'not yet':'engaged'}}</td>
+                    </tr>
+                    <tr>
+                        <td>Status</td>
+                        <td>{{offer.closedDate == null ? 'open':'closed'}}</td>
+                    </tr>
+                    <tr>
+                        <td>Likes</td>
+                        <td>{{offer.likes}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button class="btn btn-primary" [disabled]="!offerForm.valid || !offerForm.touched || !offerForm.dirty"> Submit</button> &nbsp; &nbsp;
+            <a class="btn btn-dark" routerLink="/main">Go back</a>
+        </form>
+    </div>
+</div>

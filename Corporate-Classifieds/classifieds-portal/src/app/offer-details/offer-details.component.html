@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="alert alert-danger" *ngIf="pageError!=''">{{pageError}}</div>
+    <div class="offer-details-content">
+        <h1>Offer details</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Properties</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Id</td>
+                    <td>{{offer.id}}</td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>{{offer.name}}</td>
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td>{{offer.description}}</td>
+                </tr>
+                <tr>
+                    <td>Category</td>
+                    <td>{{offer.category}}</td>
+                </tr>
+                <tr>
+                    <td>Posted on</td>
+                    <td>{{offer.openDate | date:'longDate'}}</td>
+                </tr>
+                <tr>
+                    <td>Engaged on</td>
+                    <td>{{offer.engagedDate==null && offer.closedDate == null?'not yet':'engaged'}}</td>
+                </tr>
+                <tr>
+                    <td>Status</td>
+                    <td>{{offer.closedDate == null ? 'open':'closed'}}</td>
+                </tr>
+                <tr>
+                    <td>Likes</td>
+                    <td>{{offer.likes}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <span>Liked the post?</span> &nbsp;&nbsp;
+        <span class="material-icons" [ngStyle]="{'color':isLiked?'red':'rgb(71, 69, 69)'}" (click)="likedIt()">favorite</span>
+        <button *ngIf="isLiked" (click)="submitLike()" class="btn btn-primary">Submit</button>
+        <br><br>
+        <a class="btn btn-dark" routerLink="/main">Go back</a> &nbsp;&nbsp;
+        <button class="btn btn-danger" [ngStyle]="{display:offer.closedDate==null && offer.engagedDate==null?'inline':'none'}" (click)="engageUser()">Engage</button>
+    </div>
+</div>

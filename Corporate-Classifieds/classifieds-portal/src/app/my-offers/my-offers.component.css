@@ -1,0 +1,29 @@
+.offers-content {
+    margin-top: 3%;
+}
+
+.offers-content>div>div {
+    margin-bottom: 30px;
+}
+
+.offers-content>div>div>div {
+    border: 1px solid rgb(199, 180, 180);
+}
+
+.offers-content a.btn {
+    width: 100%;
+    border: none;
+    border-radius: 0px;
+}
+
+.offers-content>div>div>div>span {
+    font-size: 25px;
+    font-weight: 100;
+    background: rgba(7, 135, 194, 0.993);
+    color: white;
+    padding: 10px;
+}
+
+.btn-success {
+    background: rgba(5, 115, 167, 0.993) !important;
+}

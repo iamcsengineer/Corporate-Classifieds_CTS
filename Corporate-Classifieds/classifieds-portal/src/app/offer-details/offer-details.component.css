@@ -1,0 +1,25 @@
+.offer-details-content {
+    width: 80%;
+    margin: 3% auto;
+}
+
+.offer-details-content>h1 {
+    font-size: 50px;
+    font-weight: 100;
+    margin-bottom: 20px;
+}
+
+span {
+    display: inline-block;
+}
+
+.material-icons {
+    font-size: 30px;
+    margin-top: 5px;
+    position: relative;
+    display: inline-block;
+}
+
+.offer-details-content>button {
+    margin-left: 10px;
+}

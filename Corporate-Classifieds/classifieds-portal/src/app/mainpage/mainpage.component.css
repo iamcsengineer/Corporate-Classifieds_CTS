@@ -1,0 +1,54 @@
+.offer-content a {
+    width: 100%;
+}
+
+#left-pane {
+    padding-top: 40px;
+    border-right: 2px solid rgb(29, 28, 28);
+    border-bottom: 2px solid black;
+    height: 590px;
+}
+
+#left-pane>div {
+    margin-top: 25%;
+}
+
+#left-pane a {
+    padding: 10px 30px;
+    width: 90%;
+}
+
+#right-pane {
+    padding: 0px 30px;
+}
+
+.offer-content {
+    margin-top: 40px;
+    width: 30%;
+    border: 1px solid rgb(34, 33, 33);
+    border-bottom: none;
+    display: inline-block;
+    padding: 0px;
+    margin-right: 10px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul>li {
+    display: inline-block;
+}
+
+input.form-control {
+    display: inline;
+}
+
+.offer-content a {
+    background-color: rgba(7, 135, 194, 0.993) !important;
+}
+
+button.material-icons {
+    border: none;
+    background: transparent;
+}

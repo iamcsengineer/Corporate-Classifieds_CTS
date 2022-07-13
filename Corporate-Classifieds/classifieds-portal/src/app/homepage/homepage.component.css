@@ -1,0 +1,22 @@
+#main-content {
+    padding: 150px 20px;
+    width: 60%;
+    margin: auto;
+    text-align: center;
+}
+
+#main-content>h1 {
+    font-size: 50px;
+    font-weight: 100;
+}
+
+#main-content>span {
+    font-size: 17px;
+    /* font-weights:bold; */
+    opacity: 0.7;
+}
+
+#main-content>a {
+    margin-top: 30px;
+    padding: 10px 20px;
+}
